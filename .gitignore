@@ -1,0 +1,15 @@
+# Maven build directory
+/target/
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Logs and temp
+*.log
+*.tmp
