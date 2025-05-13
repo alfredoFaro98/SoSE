@@ -27,7 +27,6 @@ public class Todo {
         this.description = description;
     }
 
-    // Getters and setters (can be generated or added via Lombok)
     public Long getId() {
         return id;
     }
