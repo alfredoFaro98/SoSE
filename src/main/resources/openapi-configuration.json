@@ -1,0 +1,33 @@
+{
+  "resourcePackages": [
+    "it.univaq.todo"
+  ],
+  "prettyPrint": true,
+  "cacheTTL": 0,
+  "providers": [
+    "com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider"
+  ],
+  "openAPI": {
+    "info": {
+      "version": "1.0.0",
+      "title": "Todo REST API",
+      "description": "API to manage Todo items using OpenAPI and Swagger",
+      "contact": {
+        "email": "support@todoapi.example"
+      },
+      "license": {
+        "name": "Apache 2.0",
+        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      }
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8080/TodoRESTServiceOpenApiSwagger/rest",
+        "description": "Local development server"
+      }
+    ]
+  },
+  "userDefinedOptions": {
+    "support.swagger.ui": true
+  }
+}

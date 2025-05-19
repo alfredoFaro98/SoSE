@@ -9,28 +9,42 @@
     <servlet>
         <servlet-name>rest</servlet-name>
         <servlet-class>org.apache.cxf.jaxrs.servlet.CXFNonSpringJaxrsServlet</servlet-class>
+
+        <!-- Registrazione del servizio REST -->
         <init-param>
             <param-name>jaxrs.serviceClasses</param-name>
             <param-value>it.univaq.todo.api.TodoRestApiImpl</param-value>
         </init-param>
+
+        <!-- Indirizzo base delle API -->
         <init-param>
             <param-name>jaxrs.address</param-name>
             <param-value>/rest</param-value>
         </init-param>
+
+        <!-- Provider JSON -->
         <init-param>
             <param-name>jaxrs.providers</param-name>
             <param-value>com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider</param-value>
         </init-param>
+
+        <!-- Abilita OpenAPI / Swagger -->
         <init-param>
             <param-name>jaxrs.features</param-name>
-            <param-value>
-                org.apache.cxf.jaxrs.openapi.OpenApiFeature
-            </param-value>
+            <param-value>org.apache.cxf.jaxrs.openapi.OpenApiFeature</param-value>
         </init-param>
-    <init-param>
-        <param-name>jaxrs.wadlGenerator</param-name>
-        <param-value>org.apache.cxf.jaxrs.model.wadl.WADLGenerator</param-value>
-    </init-param>
+
+        <!-- Abilita generazione WADL (opzionale) -->
+        <init-param>
+            <param-name>jaxrs.wadlGenerator</param-name>
+            <param-value>org.apache.cxf.jaxrs.model.wadl.WADLGenerator</param-value>
+        </init-param>
+
+        <!-- ✅ Abilita il caricamento della configurazione OpenAPI da src/main/resources -->
+        <init-param>
+            <param-name>useContextBasedConfigLocation</param-name>
+            <param-value>true</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>

@@ -47,7 +47,7 @@ public interface TodoRestApi {
     
     @GET
     @Produces({ MediaType.TEXT_XML, MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
-    List<Todo> getTodos();
+    public List<Todo> getTodos();
     
     @Operation(
     	    description = "Retrieve a single Todo item by its ID",
@@ -63,7 +63,7 @@ public interface TodoRestApi {
     	)
     	@GET
     	@Path("/{id}")
-    	Todo getTodo(@PathParam("id") String id);
+    	public Todo getTodo(@PathParam("id") String id);
     
     @Operation(
     	    description = "Creates a new Todo item",
@@ -109,7 +109,7 @@ public interface TodoRestApi {
     	)
     	@PUT
     	@Consumes(MediaType.APPLICATION_JSON)
-    	boolean update(
+    	public boolean update(
     	    @RequestBody(
     	        description = "The Todo object with updated fields",
     	        required = true,
@@ -135,7 +135,7 @@ public interface TodoRestApi {
     	)
     	@DELETE
     	@Path("/{id}")
-    	boolean delete(@PathParam("id") String id);
+    	public boolean delete(@PathParam("id") String id);
 
 
 }

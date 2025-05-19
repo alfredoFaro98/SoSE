@@ -10,10 +10,12 @@ import it.univaq.todo.model.Todo;
 @Path("/todos")
 @Produces({ MediaType.APPLICATION_JSON })
 public class TodoRestApiImpl implements TodoRestApi {
-    @Override
-    public List<Todo> getTodos() {
-        return TodoDAO.getTodos();
-    }
+	@Override
+	public List<Todo> getTodos() {
+	    System.out.println(">>> CHIAMATO /todos, restituisco " + TodoDAO.getTodos().size() + " elementi");
+	    return TodoDAO.getTodos();
+	}
+
 
     @Override
     public Todo getTodo(String id) {
